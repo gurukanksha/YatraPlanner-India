@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YatraPlanner India</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h2>YatraPlanner India</h2>
+    <nav>
+      <a href="#destinations">Destinations</a>
+      <a href="#compare">Compare Routes</a>
+      <a href="#budget">Trip Budget</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Explore India, Your Way</h1>
+    <p>Discover destinations, compare journeys and plan your budget.</p>
+    <a href="#planner" class="button">Plan Your Trip</a>
+  </section>
+
+  <section id="planner" class="section">
+    <h2>Plan Your Journey</h2>
+    <label>Starting City</label>
+    <input id="origin" value="Pune">
+
+    <label>Destination</label>
+    <select id="destinationSelect"></select>
+
+    <label>Travellers</label>
+    <input id="travellers" type="number" min="1" value="2">
+
+    <label>Trip Duration (days)</label>
+    <input id="days" type="number" min="1" value="3">
+
+    <button id="compareButton" class="button" type="button">
+      Compare My Trip
+    </button>
+  </section>
+
+  <section id="destinations" class="section">
+    <h2>Explore Tourist Destinations</h2>
+
+    <input id="searchInput" placeholder="Search destinations...">
+
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="Beach">Beach</option>
+      <option value="Nature">Nature</option>
+      <option value="Heritage">Heritage</option>
+      <option value="Spiritual">Spiritual</option>
+      <option value="City">City</option>
+    </select>
+
+    <select id="stateFilter">
+      <option value="all">All States</option>
+    </select>
+
+    <div id="destinationGrid" class="destination-grid"></div>
+    <p id="emptyState" class="hidden">No destinations found.</p>
+  </section>
+
+  <section id="compare" class="section">
+    <h2>Compare Transport Options</h2>
+    <h3 id="routeTitle"></h3>
+    <p id="routeDistance"></p>
+    <p id="routePeople"></p>
+    <div id="transportGrid" class="transport-grid"></div>
+  </section>
+
+  <section id="budget" class="section">
+    <h2>Calculate Your Trip Budget</h2>
+
+    <label>Transport</label>
+    <select id="transportChoice">
+      <option value="car">Car</option>
+      <option value="train">Train</option>
+      <option value="flight">Aeroplane</option>
+    </select>
+
+    <label>Hotel per room per night (₹)</label>
+    <input id="hotelCost" type="number" min="0" value="2500">
+
+    <label>Rooms required</label>
+    <input id="rooms" type="number" min="1" value="1">
+
+    <label>Food per person per day (₹)</label>
+    <input id="foodCost" type="number" min="0" value="700">
+
+    <label>Sightseeing per person (₹)</label>
+    <input id="activityCost" type="number" min="0" value="800">
+
+    <label>Local transport per person per day (₹)</label>
+    <input id="localCost" type="number" min="0" value="500">
+
+    <button id="calculateButton" class="button" type="button">
+      Calculate Budget
+    </button>
+
+    <h2 id="totalCost">₹0</h2>
+    <p>Per person: <strong id="perPersonCost">₹0</strong></p>
+    <div id="costBreakdown"></div>
+  </section>
+
+  <footer>
+    <p>YatraPlanner India | Explore More, Plan Smarter</p>
+    <p>Travel prices are estimates, not live booking fares.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
